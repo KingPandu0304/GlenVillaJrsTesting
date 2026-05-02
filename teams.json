@@ -1,0 +1,65 @@
+[
+  {
+    "team": "U7",
+    "coach": "Mark O'Connor",
+    "contact": "07700 123456",
+    "training_time": "Sat 09:00–10:00 AM",
+    "training_location": "Great Glen Rec – Pitch A",
+    "image": "",
+    "spaces": true
+  },
+  {
+    "team": "U8",
+    "coach": "Sarah Brennan",
+    "contact": "sarah@glenvila.com",
+    "training_time": "Tue 5:00–6:00 PM",
+    "training_location": "Great Glen Rec – Pitch A",
+    "image": "",
+    "spaces": true
+  },
+  {
+    "team": "U11",
+    "coach": "Declan Walsh",
+    "contact": "+44 7700 654321",
+    "training_time": "Mon 6:00–7:00 PM",
+    "training_location": "Glen Vila Park – Pitch B",
+    "image": "",
+    "spaces": false
+  },
+  {
+    "team": "U12",
+    "coach": "Aoife Sheridan",
+    "contact": "aoife@glenvila.com",
+    "training_time": "Tue 6:00–7:00 PM",
+    "training_location": "Glen Vila Park – Pitch A",
+    "image": "",
+    "spaces": true
+  },
+  {
+    "team": "U13",
+    "coach": "Patrick Doyle",
+    "contact": "patrick@glenvila.com",
+    "training_time": "Wed 6:30–7:30 PM",
+    "training_location": "Riverside Training Ground",
+    "image": "",
+    "spaces": true
+  },
+  {
+    "team": "U15",
+    "coach": "Brian Farrell",
+    "contact": "brian@glenvila.com",
+    "training_time": "Fri 6:00–7:30 PM",
+    "training_location": "Riverside Training Ground",
+    "image": "",
+    "spaces": true
+  },
+  {
+    "team": "U17",
+    "coach": "Niamh Burke",
+    "contact": "niamh@glenvila.com",
+    "training_time": "Sat 10:00–11:30 AM",
+    "training_location": "Great Glen Recreational Ground– Main Pitch",
+    "image": "",
+    "spaces": true
+  }
+]

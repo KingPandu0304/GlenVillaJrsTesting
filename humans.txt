@@ -1,0 +1,15 @@
+/* DESIGN & BUILD */
+Designer/Developer: Eternal
+
+/* TEAM */
+Club: Glen Villa Juniors FC
+Location: Great Glen, Leicestershire, England
+Website: https://glenvila.com
+
+/* THANKS */
+Fonts: Bebas Neue + Barlow via Google Fonts
+Built with: Vanilla HTML, CSS & JavaScript
+
+/* SITE */
+Last update: 2026-05-01
+Language: English (en-GB)

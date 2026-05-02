@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="designer" content="Eternal" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Access important documents and policies from Glen Villa Juniors FC. Club rules, forms, and information." />
+  <title>Club Documents — Glen Villa Juniors FC</title>
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Club Documents — Glen Villa Juniors FC" />
+  <meta property="og:description" content="Access important documents and policies from Glen Villa Juniors FC. Club rules, forms, and information." />
+  <meta property="og:image" content="images/logo.png" />
+  <meta property="og:url" content="https://glenvila.com/documents.html" />
+
+
+  <link rel="canonical" href="https://glenvila.com/documents.html" />
+  <style>
+    .docs-hero {
+      padding-top: 72px;
+      background: var(--maroon-dark);
+      min-height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .docs-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(-55deg, transparent, transparent 40px, rgba(110,198,230,0.03) 40px, rgba(110,198,230,0.03) 80px);
+    }
+    .docs-hero-content { position: relative; z-index: 1; padding: 2.5rem 2rem; max-width: 600px; }
+    .docs-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 5rem); letter-spacing: 0.05em; color: #fff; line-height: 1; margin-bottom: 0.5rem; }
+    .docs-hero h1 span { color: var(--blue); }
+    .docs-hero p { color: rgba(255,255,255,0.68); font-size: 1rem; max-width: 460px; margin: 0 auto; }
+
+    .docs-page { max-width: 960px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+    /* ── DOCUMENT CATEGORY ── */
+    .doc-category { margin-bottom: 3.5rem; }
+    .doc-category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid rgba(122,0,0,0.1);
+    }
+    .doc-category-icon {
+      width: 40px; height: 40px;
+      background: var(--maroon);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .doc-category-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.05em;
+      color: var(--maroon-dark);
+      line-height: 1;
+    }
+    .doc-category-header p {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      margin-top: 0.15rem;
+    }
+
+    /* ── DOCUMENT CARD ── */
+    .doc-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .doc-card {
+      background: var(--white);
+      border-radius: 10px;
+      border: 1px solid rgba(122,0,0,0.09);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.1rem 1.4rem;
+      text-decoration: none;
+      transition: box-shadow var(--ease), transform var(--ease), border-color var(--ease);
+    }
+    .doc-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+      border-color: rgba(122,0,0,0.25);
+    }
+    .doc-card.is-pending {
+      opacity: 0.5;
+      cursor: default;
+      pointer-events: none;
+      border-style: dashed;
+    }
+
+    .doc-icon {
+      width: 48px; height: 48px;
+      background: #fdf0f0;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      border: 1px solid rgba(122,0,0,0.1);
+    }
+    .doc-card.is-pending .doc-icon { background: #f5f5f5; border-color: #ddd; }
+
+    .doc-details { flex: 1; min-width: 0; }
+    .doc-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      margin-bottom: 0.2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .doc-meta {
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .doc-meta-item { display: flex; align-items: center; gap: 0.3rem; }
+
+    .doc-badge {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.55rem;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .badge-pdf { background: #fdecea; color: #8b0000; border: 1px solid #f5b8b8; }
+    .badge-pending { background: #f0f0f0; color: #888; border: 1px solid #ddd; }
+
+    .doc-download {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--maroon);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: gap var(--ease);
+    }
+    .doc-card:hover .doc-download { gap: 0.5rem; }
+    .doc-card.is-pending .doc-download { color: #aaa; }
+
+    /* ── CONTACT NOTE ── */
+    .docs-contact-note {
+      background: linear-gradient(135deg, #fff8f0, #fff3e8);
+      border: 1px solid rgba(122,0,0,0.12);
+      border-left: 4px solid var(--maroon);
+      border-radius: 10px;
+      padding: 1.5rem 1.75rem;
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .docs-contact-note-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .docs-contact-note h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--maroon-dark);
+      margin-bottom: 0.3rem;
+    }
+    .docs-contact-note p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; }
+
+    @media (max-width: 600px) {
+      .docs-page { padding: 3rem 1.25rem 5rem; }
+      .docs-hero-content { padding: 2.25rem 1.25rem; }
+      .doc-category-header,
+      .docs-contact-note {
+        align-items: flex-start;
+      }
+      .doc-card { flex-wrap: wrap; }
+      .doc-download { width: 100%; justify-content: flex-end; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="Glen Villa Juniors FC Logo" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">Glen Villa Juniors</span>
+          <span class="brand-sub">Football Club</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="teams.html" class="nav-link ">Teams</a>
+        <a href="fixtures.html" class="nav-link ">Fixtures</a>
+        <a href="join.html" class="nav-link nav-link--join ">Join Us</a>
+        <a href="sponsors.html" class="nav-link ">Sponsor Us</a>
+        <a href="kit.html" class="nav-link ">Club Kit</a>
+        <a href="documents.html" class="nav-link active">Documents</a>
+        <a href="contact.html" class="nav-link ">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="docs-hero">
+      <div class="docs-hero-content">
+        <div class="section-label light" style="justify-content:center;">Glen Villa Juniors FC</div>
+        <h1>Club <span>Documents</span></h1>
+        <p>Official club policies, rules, and registration documents available to download.</p>
+      </div>
+    </section>
+
+    <div class="docs-page">
+
+      <!-- ══ POLICIES & GOVERNANCE ══ -->
+      <div class="doc-category">
+        <div class="doc-category-header">
+          <div class="doc-category-icon">📋</div>
+          <div>
+            <h2>Club Governance</h2>
+            <p>Official club rules and governing documents</p>
+          </div>
+        </div>
+        <div class="doc-list">
+
+          <a href="docs/club-constitution.pdf" target="_blank" rel="noopener" class="doc-card">
+            <div class="doc-icon">📄</div>
+            <div class="doc-details">
+              <div class="doc-title">Club Constitution</div>
+              <div class="doc-meta">
+                <span class="doc-meta-item">Official rules and structure of Glen Villa Juniors FC</span>
+              </div>
+            </div>
+            <span class="doc-badge badge-pdf">PDF</span>
+            <span class="doc-download">Download ↓</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ══ SAFEGUARDING ══ -->
+      <div class="doc-category">
+        <div class="doc-category-header">
+          <div class="doc-category-icon">🛡️</div>
+          <div>
+            <h2>Safeguarding</h2>
+            <p>Child welfare and safeguarding policies</p>
+          </div>
+        </div>
+        <div class="doc-list">
+
+          <a href="docs/safeguarding-policy.pdf" target="_blank" rel="noopener" class="doc-card">
+            <div class="doc-icon">📄</div>
+            <div class="doc-details">
+              <div class="doc-title">Safeguarding Policy</div>
+              <div class="doc-meta">
+                <span class="doc-meta-item">Club commitment to child welfare and protection</span>
+              </div>
+            </div>
+            <span class="doc-badge badge-pdf">PDF</span>
+            <span class="doc-download">Download ↓</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ══ CODE OF CONDUCT ══ -->
+      <div class="doc-category">
+        <div class="doc-category-header">
+          <div class="doc-category-icon">🤝</div>
+          <div>
+            <h2>Code of Conduct</h2>
+            <p>Expected standards for players, parents, and coaches</p>
+          </div>
+        </div>
+        <div class="doc-list">
+
+          <a href="docs/code-of-conduct-players.pdf" target="_blank" rel="noopener" class="doc-card">
+            <div class="doc-icon">📄</div>
+            <div class="doc-details">
+              <div class="doc-title">Players Code of Conduct</div>
+              <div class="doc-meta">
+                <span class="doc-meta-item">Expected behaviour and standards for all players</span>
+              </div>
+            </div>
+            <span class="doc-badge badge-pdf">PDF</span>
+            <span class="doc-download">Download ↓</span>
+          </a>
+
+          <a href="docs/code-of-conduct-parents.pdf" target="_blank" rel="noopener" class="doc-card">
+            <div class="doc-icon">📄</div>
+            <div class="doc-details">
+              <div class="doc-title">Parents &amp; Spectators Code of Conduct</div>
+              <div class="doc-meta">
+                <span class="doc-meta-item">Expectations for parents and spectators on matchdays</span>
+              </div>
+            </div>
+            <span class="doc-badge badge-pdf">PDF</span>
+            <span class="doc-download">Download ↓</span>
+          </a>
+
+          <a href="docs/code-of-conduct-coaches.pdf" target="_blank" rel="noopener" class="doc-card">
+            <div class="doc-icon">📄</div>
+            <div class="doc-details">
+              <div class="doc-title">Coaches Code of Conduct</div>
+              <div class="doc-meta">
+                <span class="doc-meta-item">Standards and responsibilities for all club coaches</span>
+              </div>
+            </div>
+            <span class="doc-badge badge-pdf">PDF</span>
+            <span class="doc-download">Download ↓</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ══ CONTACT NOTE ══ -->
+      <div class="docs-contact-note">
+        <div class="docs-contact-note-icon">📬</div>
+        <div>
+          <h3>Need a specific document?</h3>
+          <p>If you need a document that isn't listed here, or if you have a question about club policies, please <a id="docs-email" href="mailto:info@glenvila.com" style="color:var(--maroon);font-weight:600;">contact the club</a> and we'll be happy to help.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Glen Villa Juniors FC" class="footer-logo" />
+        <div>
+          <div class="footer-club-name">Glen Villa Juniors FC</div>
+          <div class="footer-tagline">Passion. Teamwork. Community.</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="fixtures.html">Fixtures</a>
+        <a href="join.html">Join Us</a>
+        <a href="sponsors.html">Sponsor Us</a>
+        <a href="kit.html">Club Kit</a>
+        <a href="documents.html">Documents</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 Glen Villa Juniors FC. All rights reserved. <span class="footer-credit"><img src="images/eternal-logo.jpg" alt="Eternal" class="footer-credit-logo" /> Designed by Eternal</span></div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const u = 'info', d = 'glenvila.com';
+      const el = document.getElementById('docs-email');
+      el.href = 'mailto:' + u + '@' + d;
+    })();
+
+    // Page fade-in animations
+    const elements = document.querySelectorAll('main > section, .documents-grid > .document-card');
+    let animationIndex = 0;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, animationIndex * 50);
+          animationIndex++;
+          observer.unobserve(entry.target);
+        }
+      }, { threshold: 0.1 });
+
+      elements.forEach(element => {
+        element.classList.add('fade-in');
+        observer.observe(element);
+      });
+    });
+  </script>
+
+  <script src="nav.js"></script>
+</body>
+</html>

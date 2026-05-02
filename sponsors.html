@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="designer" content="Eternal" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Support Glen Villa Juniors FC as a sponsor. Partner with our community football club to help young players grow." />
+  <title>Sponsor Us — Glen Villa Juniors FC</title>
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sponsor Us — Glen Villa Juniors FC" />
+  <meta property="og:description" content="Support Glen Villa Juniors FC as a sponsor. Partner with our community football club to help young players grow." />
+  <meta property="og:image" content="images/logo.png" />
+  <meta property="og:url" content="https://glenvila.com/sponsors.html" />
+
+  <link rel="canonical" href="https://glenvila.com/sponsors.html" />
+  <style>
+
+    /* ── HERO ── */
+    .sponsor-hero {
+      padding-top: 72px;
+      background: var(--maroon-dark);
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .sponsor-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -55deg, transparent, transparent 40px,
+        rgba(110,198,230,0.03) 40px, rgba(110,198,230,0.03) 80px
+      );
+    }
+    .sponsor-hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      opacity: 0.15;
+    }
+    .sponsor-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 3rem 2rem;
+      max-width: 700px;
+    }
+    .sponsor-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      letter-spacing: 0.05em;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+    .sponsor-hero h1 span { color: var(--blue); }
+    .sponsor-hero p {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+
+    .sponsor-page { max-width: 1280px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+    /* ── WHAT YOU GET ── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 5rem;
+    }
+
+    .benefit-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border-top: 3px solid var(--maroon);
+      transition: transform var(--ease), box-shadow var(--ease);
+    }
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .benefit-icon { font-size: 2rem; margin-bottom: 0.85rem; }
+    .benefit-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.05em;
+      color: var(--maroon-dark);
+      margin-bottom: 0.5rem;
+    }
+    .benefit-card p {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ── TEAM SLOTS ── */
+    .slots-intro {
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+    }
+    .slots-intro p {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-top: 0.75rem;
+    }
+
+    .slots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 5rem;
+    }
+
+    .slot-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 2px solid transparent;
+      transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
+    }
+
+    /* Sponsored slot */
+    .slot-card.is-sponsored {
+      border-color: var(--blue-mid);
+    }
+    .slot-card.is-sponsored:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Available slot */
+    .slot-card.is-available {
+      border: 2px dashed rgba(122,0,0,0.2);
+      cursor: pointer;
+    }
+    .slot-card.is-available:hover {
+      border-color: var(--maroon);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .slot-header {
+      background: var(--maroon-dark);
+      padding: 0.7rem 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .slot-team-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.06em;
+      color: var(--white);
+    }
+    .slot-status-badge {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.55rem;
+      border-radius: 3px;
+    }
+    .badge-sponsored {
+      background: rgba(110,198,230,0.25);
+      color: var(--blue);
+      border: 1px solid rgba(110,198,230,0.4);
+    }
+    .badge-available {
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.6);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    /* Sponsored body */
+    .slot-sponsor-body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.75rem;
+      min-height: 130px;
+      justify-content: center;
+    }
+    .slot-sponsor-logo {
+      max-width: 120px;
+      max-height: 60px;
+      object-fit: contain;
+    }
+    .slot-sponsor-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+    }
+    .slot-sponsor-link {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-dark);
+      text-decoration: none;
+    }
+    .slot-sponsor-link:hover { text-decoration: underline; }
+
+    /* Available body */
+    .slot-available-body {
+      padding: 1.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.6rem;
+      min-height: 130px;
+      justify-content: center;
+    }
+    .slot-available-icon {
+      font-size: 1.75rem;
+      opacity: 0.3;
+    }
+    .slot-available-body p {
+      font-size: 0.82rem;
+      color: #aaa;
+      line-height: 1.5;
+    }
+    .slot-available-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--maroon);
+      margin-top: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: gap var(--ease);
+    }
+    .slot-card.is-available:hover .slot-available-cta { gap: 0.55rem; }
+    .slot-available-cta::after { content: '→'; }
+
+    /* ── GET IN TOUCH PANEL ── */
+    .sponsor-contact {
+      background: var(--maroon-dark);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .sponsor-contact-text {
+      padding: 3.5rem;
+    }
+    .sponsor-contact-text h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: 0.05em;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+    .sponsor-contact-text h2 span { color: var(--blue); }
+    .sponsor-contact-text p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .sponsor-contact-text ul {
+      list-style: none;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .sponsor-contact-text ul li {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .sponsor-contact-text ul li::before {
+      content: '✓';
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .sponsor-contact-img {
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+    }
+    .sponsor-contact-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+    .sponsor-contact-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--maroon-dark) 0%, transparent 60%);
+    }
+
+    /* ── CURRENT SPONSORS ── */
+    .current-sponsors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .current-sponsor-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      border: 2px solid rgba(122,0,0,0.08);
+      transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
+    }
+    .current-sponsor-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--blue-mid, #6ec6e6);
+    }
+    .current-sponsor-card-top {
+      background: var(--maroon-dark);
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .current-sponsor-team {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.06em;
+      color: #fff;
+    }
+    .current-sponsor-season {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: rgba(110,198,230,0.15);
+      border: 1px solid rgba(110,198,230,0.3);
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+    }
+    .current-sponsor-card-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.75rem;
+      min-height: 140px;
+      justify-content: center;
+    }
+    .current-sponsor-logo {
+      max-width: 160px;
+      max-height: 70px;
+      object-fit: contain;
+    }
+    .current-sponsor-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.05em;
+      color: var(--maroon-dark);
+      line-height: 1;
+    }
+    .current-sponsor-website {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--maroon);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity var(--ease);
+    }
+    .current-sponsor-website:hover { opacity: 1; text-decoration: underline; }
+
+    .no-sponsors-msg {
+      grid-column: 1 / -1;
+      background: #f9f5f5;
+      border: 2px dashed rgba(122,0,0,0.15);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      text-align: center;
+      color: var(--text-mid);
+    }
+    .no-sponsors-msg p { font-size: 0.95rem; line-height: 1.7; max-width: 420px; margin: 0.5rem auto 0; }
+    .no-sponsors-msg strong { color: var(--maroon-dark); }
+
+    /* ── CLUB PARTNERS ── */
+    .club-partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .club-partner-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      border: 2px solid rgba(110,198,230,0.3);
+      transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+    .club-partner-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--blue);
+    }
+    .club-partner-card-top {
+      background: linear-gradient(135deg, #0a3d6b, #0d5299);
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .club-partner-role {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.06em;
+      color: #fff;
+    }
+    .badge-partner {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.55rem;
+      border-radius: 3px;
+      background: rgba(110,198,230,0.25);
+      color: var(--blue);
+      border: 1px solid rgba(110,198,230,0.4);
+    }
+    .club-partner-card-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.75rem;
+      min-height: 140px;
+      justify-content: center;
+    }
+    .club-partner-logo {
+      max-width: 160px;
+      max-height: 70px;
+      object-fit: contain;
+    }
+    .club-partner-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.05em;
+      color: var(--maroon-dark);
+      line-height: 1;
+    }
+    .club-partner-tagline {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+    }
+    .club-partner-website {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-dark, #1a6fa0);
+      opacity: 0.75;
+      transition: opacity var(--ease);
+    }
+    .club-partner-card:hover .club-partner-website { opacity: 1; }
+
+    @media (max-width: 900px) {
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .sponsor-contact { grid-template-columns: 1fr; }
+      .sponsor-contact-img { display: none; }
+    }
+    @media (max-width: 600px) {
+      .sponsor-page { padding: 3rem 1.25rem 5rem; }
+      .sponsor-hero-content { padding: 2.5rem 1.25rem; }
+      .slot-header,
+      .current-sponsor-card-top {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .slots-grid { grid-template-columns: 1fr; }
+      .sponsor-contact-text { padding: 2.5rem 1.75rem; }
+      .current-sponsors-grid { grid-template-columns: 1fr; }
+      .club-partners-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="Glen Villa Juniors FC Logo" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">Glen Villa Juniors</span>
+          <span class="brand-sub">Football Club</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="teams.html" class="nav-link ">Teams</a>
+        <a href="fixtures.html" class="nav-link ">Fixtures</a>
+        <a href="join.html" class="nav-link nav-link--join ">Join Us</a>
+        <a href="sponsors.html" class="nav-link active">Sponsor Us</a>
+        <a href="kit.html" class="nav-link ">Club Kit</a>
+        <a href="documents.html" class="nav-link ">Documents</a>
+        <a href="contact.html" class="nav-link ">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="sponsor-hero">
+      <img src="images/image4.png" alt="Glen Villa Juniors FC matchday" class="sponsor-hero-img" fetchpriority="high" />
+      <div class="sponsor-hero-content">
+        <div class="section-label light" style="justify-content:center; margin-bottom:1rem;">Support Local Football</div>
+        <h1>Sponsor <span>Glen Villa</span></h1>
+        <p>
+          Help us keep grassroots football alive in Great Glen.
+          Your business sponsors a team, your logo goes on their kit,
+          and you become part of the club.
+        </p>
+        <a id="hero-email-btn" href="mailto:info@glenvillajuniors.co.uk" class="btn btn-blue btn-lg">Get In Touch →</a>
+      </div>
+    </section>
+
+    <div class="sponsor-page">
+
+      <!-- ══ WHAT YOU GET ══ -->
+      <div class="section-heading" style="margin-bottom: 2rem;">
+        <div class="section-heading-icon">🏆</div>
+        <div>
+          <div class="section-heading-label">Why Sponsor Us</div>
+          <h2 class="section-heading-h2">What Your Business Gets</h2>
+        </div>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">👕</div>
+          <h3>Kit Branding</h3>
+          <p>Your business name or logo printed on the team's kit for the full season — worn at every match.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🌐</div>
+          <h3>Website Listing</h3>
+          <p>Your logo and a link to your website featured on our Sponsors page, seen by hundreds of local parents and families.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🤝</div>
+          <h3>Community Goodwill</h3>
+          <p>Show your support for local youth sport. Parents and families in Great Glen will know your business backs the community.</p>
+        </div>
+      </div>
+
+      <!-- ══ CLUB PARTNERS ══ -->
+      <div id="club-partners-section">
+        <div class="section-heading" style="margin-bottom: 2rem;">
+          <div class="section-heading-icon">🤝</div>
+          <div>
+            <div class="section-heading-label">Club Partners</div>
+            <h2 class="section-heading-h2">Our Club Partners</h2>
+          </div>
+        </div>
+        <div class="club-partners-grid" id="club-partners-grid">
+          <div class="loader-wrap"><div class="spinner"></div></div>
+        </div>
+        <hr style="border:none;border-top:1px solid rgba(122,0,0,0.08);margin:3rem 0;" />
+      </div>
+
+      <!-- ══ CURRENT SPONSORS ══ -->
+      <div class="section-heading" style="margin-bottom: 2rem;">
+        <div class="section-heading-icon">⭐</div>
+        <div>
+          <div class="section-heading-label">2025/26 Season</div>
+          <h2 class="section-heading-h2">Our Current Sponsors</h2>
+        </div>
+      </div>
+      <div class="current-sponsors-grid" id="current-sponsors-grid">
+        <div class="loader-wrap"><div class="spinner"></div></div>
+      </div>
+
+      <hr style="border:none;border-top:1px solid rgba(122,0,0,0.08);margin:3rem 0;" />
+
+      <!-- ══ TEAM SLOTS ══ -->
+      <div class="section-heading" style="margin-bottom: 1rem;">
+        <div class="section-heading-icon">⚽</div>
+        <div>
+          <div class="section-heading-label">Sponsorship Slots</div>
+          <h2 class="section-heading-h2">Sponsor a Team</h2>
+        </div>
+      </div>
+
+      <div class="slots-intro">
+        <p>
+          Each team has one kit sponsor per season. Click any available slot below to get in touch
+          and claim it for the 2025/26 season. Slots are filled on a first-come, first-served basis.
+        </p>
+      </div>
+
+      <div class="slots-grid" id="slots-grid">
+        <div class="loader-wrap"><div class="spinner"></div></div>
+      </div>
+
+      <!-- ══ CONTACT PANEL ══ -->
+      <div class="sponsor-contact">
+        <div class="sponsor-contact-text">
+          <h2>Interested in <span>Sponsoring?</span></h2>
+          <p>
+            Sponsoring a team at Glen Villa Juniors is a great way to get your business
+            in front of hundreds of local families while genuinely supporting youth sport
+            in your community.
+          </p>
+          <ul>
+            <li>Kit branding for the full season</li>
+            <li>Logo on the club website</li>
+            <li>Direct link to a specific age group</li>
+            <li>Flexible — one team or multiple</li>
+          </ul>
+          <a id="contact-sponsor-btn" href="mailto:info@glenvillajuniors.co.uk" class="btn btn-blue">✉ Email Us to Discuss</a>
+        </div>
+        <div class="sponsor-contact-img">
+          <img src="images/image1.jpg" alt="Glen Villa Juniors players" />
+          <div class="sponsor-contact-img-overlay"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Glen Villa Juniors FC" class="footer-logo" />
+        <div>
+          <div class="footer-club-name">Glen Villa Juniors FC</div>
+          <div class="footer-tagline">Passion. Teamwork. Community.</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="fixtures.html">Fixtures</a>
+        <a href="join.html">Join Us</a>
+        <a href="sponsors.html">Sponsor Us</a>
+        <a href="kit.html">Club Kit</a>
+        <a href="documents.html">Documents</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 Glen Villa Juniors FC. All rights reserved. <span class="footer-credit"><img src="images/eternal-logo.jpg" alt="Eternal" class="footer-credit-logo" /> Designed by Eternal</span></div>
+    </div>
+  </footer>
+
+  <script>
+    // Emails
+    (function() {
+      const u = 'info', d = 'glenvila.com';
+      const subject = 'Sponsorship Enquiry — Glen Villa Juniors FC';
+      ['hero-email-btn', 'contact-sponsor-btn'].forEach(id => {
+        const el = document.getElementById(id);
+        el.href = 'mailto:' + u + '@' + d + '?subject=' + encodeURIComponent(subject);
+      });
+    })();
+
+    // Load sponsors
+    async function loadSlots() {
+      const grid = document.getElementById('slots-grid');
+      try {
+        const res = await fetch('sponsors.json');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+
+        const clubPartners = data.filter(s => s.type === 'club_partner' && s.sponsor && s.sponsor.trim() !== '');
+        const teamSponsors = data.filter(s => s.type !== 'club_partner');
+
+        renderClubPartners(clubPartners);
+        renderCurrentSponsors(teamSponsors);
+        renderSlots(grid, teamSponsors);
+      } catch(err) {
+        grid.innerHTML = '<p style="color:var(--text-mid);font-size:0.9rem;">Could not load sponsor data.</p>';
+      }
+    }
+
+    function renderClubPartners(partners) {
+      const section = document.getElementById('club-partners-section');
+      const grid = document.getElementById('club-partners-grid');
+      if (partners.length === 0) {
+        if (section) section.style.display = 'none';
+        return;
+      }
+      grid.innerHTML = partners.map(s => {
+        const logoSrc = s.sponsor_logo && s.sponsor_logo.trim() !== '' ? s.sponsor_logo.trim() : null;
+        const logoBlock = logoSrc
+          ? `<img src="${logoSrc}" alt="${s.sponsor} logo" class="club-partner-logo" onerror="this.style.display='none'" />`
+          : '';
+        const tagline = s.sponsor_tagline ? `<span class="club-partner-tagline">${s.sponsor_tagline}</span>` : '';
+        const website = s.sponsor_website ? `<span class="club-partner-website">Visit Website →</span>` : '';
+        const role = s.partner_role || 'Club Partner';
+        const card = `<div class="club-partner-card-top">
+            <span class="club-partner-role">${role}</span>
+            <span class="badge-partner">Club Partner</span>
+          </div>
+          <div class="club-partner-card-body">
+            ${logoBlock}
+            <div class="club-partner-name">${s.sponsor}</div>
+            ${tagline}
+            ${website}
+          </div>`;
+        return s.sponsor_website && s.sponsor_website.trim() !== ''
+          ? `<a href="${s.sponsor_website}" target="_blank" rel="noopener" class="club-partner-card">${card}</a>`
+          : `<div class="club-partner-card">${card}</div>`;
+      }).join('');
+    }
+
+    function renderCurrentSponsors(data) {
+      const grid = document.getElementById('current-sponsors-grid');
+      const active = data.filter(s => s.sponsor && s.sponsor.trim() !== '');
+      if (active.length === 0) {
+        grid.innerHTML = '<div class="no-sponsors-msg"><div style="font-size:2rem;margin-bottom:0.5rem;">🤝</div><strong>Be our first sponsor!</strong><p>We&#39;re looking for local businesses to sponsor our teams for the 2025/26 season. Your logo on the kit, your name on the website &#8212; get in touch today.</p></div>';
+        return;
+      }
+      grid.innerHTML = active.map(s => {
+        const logoSrc = s.sponsor_logo && s.sponsor_logo.trim() !== '' ? s.sponsor_logo.trim() : null;
+        const logoBlock = logoSrc
+          ? `<img src="${logoSrc}" alt="${s.sponsor} logo" class="current-sponsor-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><div class="current-sponsor-name" style="display:none">${s.sponsor}</div>`
+          : `<div class="current-sponsor-name">${s.sponsor}</div>`;
+        const linkBlock = s.sponsor_website && s.sponsor_website.trim() !== ''
+          ? `<a href="${s.sponsor_website}" target="_blank" rel="noopener" class="current-sponsor-website">Visit Website →</a>`
+          : '';
+        return `<div class="current-sponsor-card">
+          <div class="current-sponsor-card-top">
+            <span class="current-sponsor-team">${s.team}</span>
+            <span class="current-sponsor-season">2025/26</span>
+          </div>
+          <div class="current-sponsor-card-body">
+            ${logoBlock}
+            ${logoSrc ? `<div class="current-sponsor-name">${s.sponsor}</div>` : ''}
+            ${linkBlock}
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    function renderSlots(grid, data) {
+      const u = 'info', d = 'glenvila.com';
+      grid.innerHTML = data.map(s => {
+        const hasSponsor = s.sponsor && s.sponsor.trim() !== '';
+
+        if (hasSponsor) {
+          const logoSrc = s.sponsor_logo && s.sponsor_logo.trim() !== '' ? s.sponsor_logo.trim() : null;
+          const logoBlock = logoSrc
+            ? `<img src="${logoSrc}" alt="${s.sponsor} logo" class="slot-sponsor-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><div style="display:none;font-size:2rem;opacity:0.2;">🏢</div>`
+            : `<div style="font-size:2rem;opacity:0.2;">🏢</div>`;
+          const linkBlock = s.sponsor_website && s.sponsor_website.trim() !== ''
+            ? `<a href="${s.sponsor_website}" target="_blank" rel="noopener" class="slot-sponsor-link">Visit Website →</a>`
+            : '';
+          return `<div class="slot-card is-sponsored">
+            <div class="slot-header">
+              <span class="slot-team-name">${s.team}</span>
+              <span class="slot-status-badge badge-sponsored">Sponsored</span>
+            </div>
+            <div class="slot-sponsor-body">
+              ${logoBlock}
+              <div class="slot-sponsor-name">${s.sponsor}</div>
+              ${linkBlock}
+            </div>
+          </div>`;
+        } else {
+          const mailto = 'mailto:' + u + '@' + d
+            + '?subject=' + encodeURIComponent('Sponsorship Enquiry — ' + s.team + ' Glen Villa Juniors FC')
+            + '&body=' + encodeURIComponent("Hi,\n\nI'm interested in sponsoring the " + s.team + " team at Glen Villa Juniors FC for the 2025/26 season.\n\nMy name is:\nMy business is:\nMy phone number is:\n\nLooking forward to hearing from you.");
+          return `<div class="slot-card is-available" onclick="window.location.href='${mailto}'">
+            <div class="slot-header">
+              <span class="slot-team-name">${s.team}</span>
+              <span class="slot-status-badge badge-available">Available</span>
+            </div>
+            <div class="slot-available-body">
+              <div class="slot-available-icon">🤝</div>
+              <p>This team is looking for a sponsor for 2025/26</p>
+              <div class="slot-available-cta">Sponsor This Team</div>
+            </div>
+          </div>`;
+        }
+      }).join('');
+    }
+
+    loadSlots();
+  </script>
+
+  <script src="nav.js"></script>
+</body>
+</html>

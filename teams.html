@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="designer" content="Eternal" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore our teams at Glen Villa Juniors FC. Youth football teams from U7 to U17, fostering skill development and teamwork." />
+  <title>Our Teams — Glen Villa Juniors FC</title>
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Our Teams — Glen Villa Juniors FC" />
+  <meta property="og:description" content="Explore our teams at Glen Villa Juniors FC. Youth football teams from U7 to U17, fostering skill development and teamwork." />
+  <meta property="og:image" content="images/logo.png" />
+  <meta property="og:url" content="https://glenvila.com/teams.html" />
+  
+
+  <link rel="canonical" href="https://glenvila.com/teams.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://glenvila.com"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Teams — Glen Villa Juniors FC",
+      "item": "https://glenvila.com/teams.html"
+    }]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="Glen Villa Juniors FC Logo" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">Glen Villa Juniors</span>
+          <span class="brand-sub">Football Club</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="teams.html" class="nav-link active">Teams</a>
+        <a href="fixtures.html" class="nav-link ">Fixtures</a>
+        <a href="join.html" class="nav-link nav-link--join ">Join Us</a>
+        <a href="sponsors.html" class="nav-link ">Sponsor Us</a>
+        <a href="kit.html" class="nav-link ">Club Kit</a>
+        <a href="documents.html" class="nav-link ">Documents</a>
+        <a href="contact.html" class="nav-link ">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══ PAGE HERO ═══ -->
+    <section class="page-hero" style="padding-top:72px; min-height:280px; display:flex; align-items:center; justify-content:center;">
+      <img src="image1.jpg" alt="Glen Villa Juniors FC team" class="page-hero-img" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;opacity:0.25;" />
+      <div class="page-hero-content" style="position:relative;z-index:2;text-align:center;padding:3rem 2rem;">
+        <div class="section-label light" style="justify-content:center;">Glen Villa Juniors FC</div>
+        <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,5.5rem);letter-spacing:0.05em;color:#fff;line-height:1;margin-bottom:0.5rem;">
+          Our <span style="color:#6ec6e6;">Teams</span>
+        </h1>
+        <p style="color:rgba(255,255,255,0.68);font-size:1rem;max-width:460px;margin:0 auto;">
+          Click any team card to find out more about training times, location, and how to get in touch.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══ TEAMS GRID ═══ -->
+    <section class="teams-section">
+      <div class="teams-grid" id="teams-grid">
+        <!-- Cards injected by main.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ MODAL ═══ -->
+  <div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-team-name">
+    <div class="modal">
+
+      <div class="modal-header">
+        <img id="modal-img" class="modal-header-img" src="blank.png" alt="Team photo" />
+        <div>
+          <div class="modal-team-label">Glen Villa Juniors FC</div>
+          <div class="modal-team-name" id="modal-team-name">U7</div>
+        </div>
+        <button class="modal-close" onclick="closeTeam()" aria-label="Close">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <ul class="modal-info-list">
+          <li>
+            <div class="info-icon">👤</div>
+            <div>
+              <span class="info-label">Head Coach</span>
+              <span class="info-value" id="modal-coach-val">—</span>
+            </div>
+          </li>
+          <li>
+            <div class="info-icon">🕐</div>
+            <div>
+              <span class="info-label">Training Time</span>
+              <span class="info-value" id="modal-time-val">—</span>
+            </div>
+          </li>
+          <li>
+            <div class="info-icon">📍</div>
+            <div>
+              <span class="info-label">Training Location</span>
+              <span class="info-value" id="modal-location-val">—</span>
+            </div>
+          </li>
+          <li>
+            <div class="info-icon">📞</div>
+            <div>
+              <span class="info-label">Contact</span>
+              <span class="info-value" id="modal-contact-val">—</span>
+            </div>
+          </li>
+          <li id="modal-spaces-row">
+            <div class="info-icon">🟢</div>
+            <div>
+              <span class="info-label">Availability</span>
+              <span class="info-value" id="modal-spaces-val">—</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="modal-footer">
+        <a id="modal-email-btn" href="mailto:info@glenvillajuniors.co.uk" class="btn btn-maroon">✉ Email Coach</a>
+        <button class="btn" style="background:#f0e8e8;color:#7a0000;border:2px solid #d9b0b0;" onclick="closeTeam()">Close</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Glen Villa Juniors FC" class="footer-logo" />
+        <div>
+          <div class="footer-club-name">Glen Villa Juniors FC</div>
+          <div class="footer-tagline">Passion. Teamwork. Community.</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="fixtures.html">Fixtures</a>
+        <a href="join.html">Join Us</a>
+        <a href="sponsors.html">Sponsor Us</a>
+        <a href="kit.html">Club Kit</a>
+        <a href="documents.html">Documents</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 Glen Villa Juniors FC. All rights reserved. <span class="footer-credit"><img src="images/eternal-logo.jpg" alt="Eternal" class="footer-credit-logo" /> Designed by Eternal</span></div>
+    </div>
+  </footer>
+
+  <script src="main.js?v=1"></script>
+  <script src="nav.js"></script>
+  <script>
+    // Page fade-in animations
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('main > section, .team-card');
+      let animationIndex = 0;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, animationIndex * 50);
+            animationIndex++;
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(element => {
+        element.classList.add('fade-in');
+        observer.observe(element);
+      });
+    });
+  </script>
+</body>
+</html>

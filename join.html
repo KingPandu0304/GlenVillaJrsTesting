@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="designer" content="Eternal" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join Glen Villa Juniors FC. Register your child for youth football and become part of our community club." />
+  <title>Join Us — Glen Villa Juniors FC</title>
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Join Us — Glen Villa Juniors FC" />
+  <meta property="og:description" content="Join Glen Villa Juniors FC. Register your child for youth football and become part of our community club." />
+  <meta property="og:image" content="images/logo.png" />
+  <meta property="og:url" content="https://glenvila.com/join.html" />
+
+  <link rel="canonical" href="https://glenvila.com/join.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://glenvila.com"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Join Us — Glen Villa Juniors FC",
+      "item": "https://glenvila.com/join.html"
+    }]
+  }
+  </script>
+  <style>
+
+    .join-hero {
+      padding-top: 72px;
+      background: var(--maroon-dark);
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .join-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -55deg, transparent, transparent 40px,
+        rgba(110,198,230,0.03) 40px, rgba(110,198,230,0.03) 80px
+      );
+    }
+    .join-hero-content { position: relative; z-index: 1; padding: 2.5rem 2rem; }
+    .join-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      letter-spacing: 0.05em;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .join-hero h1 span { color: var(--blue); }
+    .join-hero p { color: rgba(255,255,255,0.68); font-size: 1rem; max-width: 500px; margin: 0 auto; }
+
+    .join-page { max-width: 1280px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+    /* ── HOW IT WORKS ── */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .step {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      box-shadow: var(--shadow-sm);
+      border-top: 3px solid var(--maroon);
+      position: relative;
+    }
+    .step-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5rem;
+      letter-spacing: 0.04em;
+      color: rgba(122,0,0,0.1);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .step h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+      color: var(--maroon-dark);
+      margin-bottom: 0.5rem;
+    }
+    .step p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+
+    /* ── AGE GROUP GRID ── */
+    .spaces-label {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+    }
+    .legend-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+    }
+    .legend-dot.open { background: #2a9d2a; }
+    .legend-dot.full { background: #cc3333; }
+
+    .spaces-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 4rem;
+    }
+
+    .space-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 2px solid transparent;
+      transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
+      cursor: pointer;
+    }
+    .space-card.is-open:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: #2a9d2a;
+    }
+    .space-card.is-full { opacity: 0.65; cursor: default; }
+
+    .space-card-top {
+      padding: 1.25rem 1.25rem 1rem;
+      border-bottom: 3px solid var(--maroon);
+    }
+    .space-card.is-full .space-card-top { border-bottom-color: #cc3333; }
+
+    .space-team-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      color: var(--maroon-dark);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .space-coach {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      font-weight: 600;
+    }
+
+    .space-status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .space-status.open { color: #1e7a1e; background: #edfaed; }
+    .space-status.full { color: #aa2222; background: #fdecea; }
+    .space-status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .space-status.open .space-status-dot { background: #2a9d2a; }
+    .space-status.full  .space-status-dot { background: #cc3333; }
+
+    .space-card-footer {
+      padding: 0.6rem 1.25rem;
+      font-size: 0.78rem;
+      color: var(--blue-dark);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      transition: gap var(--ease);
+    }
+    .space-card.is-open:hover .space-card-footer { gap: 0.6rem; }
+    .space-card.is-open .space-card-footer::after { content: '→'; }
+    .space-card.is-full .space-card-footer { color: #aaa; }
+
+    /* ── CONTACT FALLBACK ── */
+    .join-contact {
+      background: var(--maroon-dark);
+      border-radius: var(--radius);
+      padding: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .join-contact-text h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .join-contact-text p { color: rgba(255,255,255,0.68); font-size: 0.95rem; }
+
+    /* ── MODAL (reuse existing modal styles) ── */
+
+    @media (max-width: 800px) {
+      .steps { grid-template-columns: 1fr; }
+      .join-contact { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .join-page { padding: 3rem 1.25rem 5rem; }
+      .join-hero-content { padding: 2.25rem 1.25rem; }
+      .spaces-grid { grid-template-columns: 1fr; }
+      .join-contact { padding: 2rem 1.5rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="Glen Villa Juniors FC Logo" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">Glen Villa Juniors</span>
+          <span class="brand-sub">Football Club</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="teams.html" class="nav-link">Teams</a>
+        <a href="fixtures.html" class="nav-link">Fixtures</a>
+        <a href="join.html" class="nav-link nav-link--join active">Join Us</a>
+        <a href="sponsors.html" class="nav-link">Sponsor Us</a>
+        <a href="kit.html" class="nav-link">Club Kit</a>
+        <a href="documents.html" class="nav-link">Documents</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="join-hero">
+      <div class="join-hero-content">
+        <div class="section-label light" style="justify-content:center;">Glen Villa Juniors FC</div>
+        <h1>Join <span>Glen Villa</span></h1>
+        <p>Find out which age groups have spaces available and get in touch with the coach directly.</p>
+      </div>
+    </section>
+
+    <div class="join-page">
+
+      <!-- HOW IT WORKS -->
+      <div class="section-heading" style="margin-bottom:2rem;">
+        <div class="section-heading-icon">👋</div>
+        <div>
+          <div class="section-heading-label">Getting Started</div>
+          <h2 class="section-heading-h2">How to Join</h2>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>Find Your Age Group</h3>
+          <p>Check the availability grid below to see which teams currently have spaces for new players.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>Contact the Coach</h3>
+          <p>Click the team card to get the coach's contact details and drop them a quick email to register your interest.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>Come to a Trial Session</h3>
+          <p>The coach will invite you along to a training session so your child can have a go and meet the squad.</p>
+        </div>
+      </div>
+
+      <!-- SPACES GRID -->
+      <div class="section-heading" style="margin-bottom:1rem;">
+        <div class="section-heading-icon">⚽</div>
+        <div>
+          <div class="section-heading-label">Current Availability</div>
+          <h2 class="section-heading-h2">Age Group Spaces</h2>
+        </div>
+      </div>
+
+      <div class="spaces-label">
+        <div class="legend-item"><div class="legend-dot open"></div> Spaces available</div>
+        <div class="legend-item"><div class="legend-dot full"></div> Currently full</div>
+      </div>
+
+      <div class="spaces-grid" id="spaces-grid">
+        <div class="loader-wrap"><div class="spinner"></div></div>
+      </div>
+
+      <!-- GENERAL CONTACT FALLBACK -->
+      <div class="join-contact">
+        <div class="join-contact-text">
+          <h3>Not Sure Which Age Group?</h3>
+          <p>Drop us an email and we'll point you in the right direction.</p>
+        </div>
+        <a id="join-email-btn" href="mailto:info@glenvila.com" class="btn btn-blue btn-lg">✉ Email the Club</a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ═══ CONTACT MODAL ═══ -->
+  <div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-team-name">
+    <div class="modal">
+      <div class="modal-header">
+          <img id="modal-img" class="modal-header-img" src="images/blank.png" alt="Team photo" />
+        <div>
+          <div class="modal-team-label">Glen Villa Juniors FC</div>
+          <div class="modal-team-name" id="modal-team-name"></div>
+        </div>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <ul class="modal-info-list">
+          <li>
+            <div class="info-icon">👤</div>
+            <div><span class="info-label">Coach</span><span class="info-value" id="modal-coach"></span></div>
+          </li>
+          <li>
+            <div class="info-icon">🕐</div>
+            <div><span class="info-label">Training</span><span class="info-value" id="modal-time"></span></div>
+          </li>
+          <li>
+            <div class="info-icon">📍</div>
+            <div><span class="info-label">Location</span><span class="info-value" id="modal-location"></span></div>
+          </li>
+          <li>
+            <div class="info-icon" id="modal-status-icon"></div>
+            <div><span class="info-label">Spaces</span><span class="info-value" id="modal-spaces"></span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a id="modal-email" href="mailto:info@glenvila.com" class="btn btn-maroon">✉ Email Coach</a>
+        <button class="btn" style="background:#f0e8e8;color:#7a0000;border:2px solid #d9b0b0;" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Glen Villa Juniors FC" class="footer-logo" />
+        <div>
+          <div class="footer-club-name">Glen Villa Juniors FC</div>
+          <div class="footer-tagline">Passion. Teamwork. Community.</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="fixtures.html">Fixtures</a>
+        <a href="join.html">Join Us</a>
+        <a href="sponsors.html">Sponsor Us</a>
+        <a href="kit.html">Club Kit</a>
+        <a href="documents.html">Documents</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 Glen Villa Juniors FC. All rights reserved. <span class="footer-credit"><img src="images/eternal-logo.jpg" alt="Eternal" class="footer-credit-logo" /> Designed by Eternal</span></div>
+    </div>
+  </footer>
+
+  <script>
+    let teamsData = [];
+
+    // General club email
+    (function() {
+      const u = 'info', d = 'glenvila.com';
+      const btn = document.getElementById('join-email-btn');
+      btn.href = 'mailto:' + u + '@' + d;
+    })();
+
+    // Load teams.json
+    async function loadSpaces() {
+      const grid = document.getElementById('spaces-grid');
+      try {
+        const res = await fetch('teams.json');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        teamsData = await res.json();
+        renderSpaces(grid);
+      } catch(err) {
+        grid.innerHTML = '<div class="no-fixtures">Could not load team data. Please try again later.</div>';
+      }
+    }
+
+    function renderSpaces(grid) {
+      grid.innerHTML = teamsData.map((t, i) => {
+        const open = t.spaces !== false;
+        const statusClass = open ? 'open' : 'full';
+        const statusText  = open ? 'Spaces Available' : 'Currently Full';
+        const footerText  = open ? 'Contact Coach' : 'No spaces right now';
+        return `<div class="space-card is-${statusClass}" onclick="${open ? 'openModal(' + i + ')' : ''}">
+          <div class="space-card-top">
+            <div class="space-team-name">${t.team}</div>
+            <div class="space-coach">${t.coach}</div>
+          </div>
+          <div class="space-status ${statusClass}">
+            <div class="space-status-dot"></div>
+            ${statusText}
+          </div>
+          <div class="space-card-footer">${footerText}</div>
+        </div>`;
+      }).join('');
+    }
+
+    function openModal(i) {
+      const t = teamsData[i];
+      document.getElementById('modal-team-name').textContent = t.team;
+      document.getElementById('modal-coach').textContent     = t.coach;
+      document.getElementById('modal-time').textContent      = t.training_time;
+      document.getElementById('modal-location').textContent  = t.training_location;
+
+      const spacesEl = document.getElementById('modal-spaces');
+      const iconEl   = document.getElementById('modal-status-icon');
+      if (t.spaces !== false) {
+        spacesEl.textContent = 'Spaces available — get in touch!';
+        spacesEl.style.color = '#1e7a1e';
+        iconEl.textContent   = '✅';
+      } else {
+        spacesEl.textContent = 'Currently full';
+        spacesEl.style.color = '#aa2222';
+        iconEl.textContent   = '🔴';
+      }
+
+      const img = document.getElementById('modal-img');
+      img.src = t.image || 'blank.png';
+
+      const emailBtn = document.getElementById('modal-email');
+      emailBtn.href  = 'mailto:' + t.email + '?subject=Interest in joining ' + t.team;
+
+      document.getElementById('modal-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('modal-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('modal-overlay').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    loadSpaces();
+  </script>
+
+  <script src="nav.js"></script>
+</body>
+</html>

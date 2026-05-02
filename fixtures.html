@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="designer" content="Eternal" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="View fixtures and match schedules for Glen Villa Juniors FC teams. Find game locations and times." />
+  <title>Fixtures &amp; Location — Glen Villa Juniors FC</title>
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fixtures &amp; Location — Glen Villa Juniors FC" />
+  <meta property="og:description" content="View fixtures and match schedules for Glen Villa Juniors FC teams. Find game locations and times." />
+  <meta property="og:image" content="images/logo.png" />
+  <meta property="og:url" content="https://glenvila.com/fixtures.html" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fixtures &amp; Location — Glen Villa Juniors FC" />
+  <meta name="twitter:description" content="View fixtures and match schedules for Glen Villa Juniors FC teams. Find game locations and times." />
+  <meta name="twitter:image" content="images/logo.png" />
+  <meta name="twitter:site" content="@GlenVillaJFC" />
+
+  <link rel="canonical" href="https://glenvila.com/fixtures.html" />
+  <style>
+
+    .fixtures-hero {
+      padding-top: 72px;
+      background: var(--maroon-dark);
+      min-height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .fixtures-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -55deg, transparent, transparent 40px,
+        rgba(110,198,230,0.03) 40px, rgba(110,198,230,0.03) 80px
+      );
+    }
+    .fixtures-hero-content { position: relative; z-index: 1; padding: 2.5rem 2rem; }
+    .fixtures-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      letter-spacing: 0.05em;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .fixtures-hero h1 span { color: var(--blue); }
+    .fixtures-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 460px; margin: 0 auto; }
+
+    .fixtures-page { max-width: 1280px; margin: 0 auto; padding: 4rem 2rem 5rem; }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .section-heading-icon {
+      width: 46px; height: 46px;
+      background: var(--maroon);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .section-heading-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--maroon);
+      display: flex; align-items: center; gap: 0.5rem;
+      margin-bottom: 2px;
+    }
+    .section-heading-label::before {
+      content: ''; display: block;
+      width: 18px; height: 2px; background: var(--maroon);
+    }
+    .section-heading h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem; letter-spacing: 0.04em;
+      color: var(--maroon-dark); line-height: 1;
+    }
+
+    /* FA NOTICE */
+    .fa-notice {
+      background: linear-gradient(135deg, #fff8f0, #fff3e8);
+      border: 1px solid rgba(122,0,0,0.15);
+      border-left: 4px solid var(--maroon);
+      border-radius: 10px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .fa-notice-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .fa-notice h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--maroon-dark); margin-bottom: 0.35rem;
+    }
+    .fa-notice p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.6; margin-bottom: 0.35rem; }
+    .fa-notice code {
+      display: inline-block;
+      background: rgba(122,0,0,0.08); border-radius: 4px;
+      padding: 0.1rem 0.5rem; font-size: 0.82rem;
+      color: var(--maroon); font-family: 'Courier New', monospace;
+    }
+
+    /* EMBED SLOTS */
+    .embed-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .embed-slot {
+      border-radius: 10px; overflow: hidden;
+      border: 2px solid rgba(122,0,0,0.1);
+      background: #fff;
+      min-height: 300px;
+      display: flex; flex-direction: column;
+    }
+    .embed-slot-header {
+      background: var(--maroon-dark);
+      padding: 0.75rem 1.1rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .embed-slot-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem; letter-spacing: 0.08em; color: #fff;
+    }
+    .embed-slot-badge {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      background: rgba(110,198,230,0.2); color: var(--blue);
+      border: 1px solid rgba(110,198,230,0.3);
+      padding: 0.2rem 0.6rem; border-radius: 3px;
+    }
+    .embed-slot-body {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.75rem; padding: 2rem;
+      text-align: center; color: #aaa;
+    }
+    .embed-slot-body .placeholder-icon { font-size: 2.5rem; opacity: 0.5; }
+    .embed-slot-body p { font-size: 0.82rem; line-height: 1.6; max-width: 220px; }
+    .embed-slot-body code {
+      font-size: 0.78rem; background: rgba(0,0,0,0.05);
+      padding: 0.25rem 0.6rem; border-radius: 4px;
+      color: #888; font-family: 'Courier New', monospace;
+    }
+    .embed-slot iframe {
+      width: 100%; flex: 1; border: none; min-height: 300px;
+    }
+
+    /* ── FA FULL TIME WIDGET RESTYLING ── */
+
+    #lrep505923715, #lrep217907025,
+    #lrep463262751, #lrep445860493 {
+      width: 100% !important;
+      font-family: 'Barlow', sans-serif !important;
+      font-size: 0.88rem !important;
+      color: #2a2a2a !important;
+      background: #fff;
+    }
+
+    /* Hide FA branding link */
+    #lrep505923715 > a[href*="thefa"], #lrep217907025 > a[href*="thefa"],
+    #lrep463262751 > a[href*="thefa"], #lrep445860493 > a[href*="thefa"] {
+      display: none !important;
+    }
+
+    /* Date header rows */
+    #lrep505923715 b, #lrep217907025 b,
+    #lrep463262751 b, #lrep445860493 b {
+      display: block !important;
+      background: #f4f0f0 !important;
+      color: var(--maroon-dark) !important;
+      font-family: 'Barlow Condensed', sans-serif !important;
+      font-size: 0.72rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.16em !important;
+      text-transform: uppercase !important;
+      padding: 0.5rem 1rem !important;
+      margin: 0 !important;
+      border-left: 3px solid var(--maroon) !important;
+    }
+
+    /* Tables */
+    #lrep505923715 table,
+    #lrep217907025 table {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      margin: 0 !important;
+    }
+
+    #lrep505923715 tr, #lrep217907025 tr,
+    #lrep463262751 tr, #lrep445860493 tr {
+      border-bottom: 1px solid rgba(122,0,0,0.07) !important;
+      transition: background 0.15s ease !important;
+    }
+
+    #lrep505923715 tr:hover, #lrep217907025 tr:hover,
+    #lrep463262751 tr:hover, #lrep445860493 tr:hover {
+      background: #fdf8f8 !important;
+    }
+
+    #lrep505923715 td, #lrep217907025 td,
+    #lrep463262751 td, #lrep445860493 td {
+      padding: 0.65rem 0.75rem !important;
+      vertical-align: middle !important;
+      border: none !important;
+      font-size: 0.85rem !important;
+      color: #333 !important;
+      line-height: 1.4 !important;
+    }
+
+    /* Team name cells */
+    #lrep505923715 td:nth-child(1), #lrep505923715 td:nth-child(3),
+    #lrep217907025 td:nth-child(1), #lrep217907025 td:nth-child(3),
+    #lrep463262751 td:nth-child(1), #lrep463262751 td:nth-child(3),
+    #lrep445860493 td:nth-child(1), #lrep445860493 td:nth-child(3) {
+      font-weight: 600 !important;
+    }
+
+    /* Score / vs cell */
+    #lrep505923715 td:nth-child(2), #lrep217907025 td:nth-child(2),
+    #lrep463262751 td:nth-child(2), #lrep445860493 td:nth-child(2) {
+      text-align: center !important;
+      font-family: 'Bebas Neue', sans-serif !important;
+      font-size: 1.1rem !important;
+      letter-spacing: 0.06em !important;
+      color: var(--maroon) !important;
+      white-space: nowrap !important;
+      width: 60px !important;
+    }
+
+    /* Venue cell */
+    #lrep505923715 td:last-child, #lrep217907025 td:last-child,
+    #lrep463262751 td:last-child, #lrep445860493 td:last-child {
+      color: #999 !important;
+      font-size: 0.78rem !important;
+      text-align: right !important;
+    }
+
+    /* FA crest */
+    #lrep505923715 img, #lrep217907025 img,
+    #lrep463262751 img, #lrep445860493 img {
+      width: 20px !important;
+      height: 20px !important;
+      opacity: 0.35 !important;
+      vertical-align: middle !important;
+    }
+
+    /* Glen Villa rows — highlight */
+    #lrep505923715 tr:has(td:first-child:not(:empty)), #lrep217907025 tr:has(td:first-child:not(:empty)),
+    #lrep463262751 tr:has(td:first-child:not(:empty)), #lrep445860493 tr:has(td:first-child:not(:empty)) {
+      background: #fff !important;
+    }
+
+    /* ── LEAGUE TABS ── */
+    .league-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+    }
+    .league-tab {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.55rem 1.1rem;
+      border-radius: 6px;
+      border: 2px solid rgba(122,0,0,0.2);
+      background: #fff;
+      color: var(--maroon-dark);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .league-tab:hover {
+      border-color: var(--maroon);
+      background: #fdf5f5;
+    }
+    .league-tab.active {
+      background: var(--maroon-dark);
+      border-color: var(--maroon-dark);
+      color: #fff;
+    }
+    .league-tab .tab-teams {
+      font-size: 0.68rem;
+      opacity: 0.7;
+      display: block;
+      letter-spacing: 0.08em;
+      margin-top: 1px;
+    }
+    .league-tab.active .tab-teams { opacity: 0.8; }
+    .league-tab.tab-pending {
+      opacity: 0.5;
+      cursor: default;
+      border-style: dashed;
+    }
+    .league-tab.tab-pending:hover {
+      background: #fff;
+      border-color: rgba(122,0,0,0.2);
+    }
+
+    .league-panel { display: none; }
+    .league-panel.active { display: block; }
+
+    .divider { border: none; border-top: 1px solid rgba(122,0,0,0.1); margin: 4rem 0; }
+
+    @media (max-width: 700px) {
+      .fixtures-page { padding: 3rem 1.25rem 4rem; }
+      .fixtures-hero-content { padding: 2.25rem 1.25rem; }
+      .section-heading {
+        align-items: flex-start;
+      }
+      .embed-slot-header {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .league-tab {
+        flex: 1 1 100%;
+        text-align: left;
+      }
+      #lrep505923715 td, #lrep217907025 td,
+      #lrep463262751 td, #lrep445860493 td {
+        padding: 0.5rem !important;
+        font-size: 0.78rem !important;
+      }
+      #lrep505923715 td:nth-child(2), #lrep217907025 td:nth-child(2),
+      #lrep463262751 td:nth-child(2), #lrep445860493 td:nth-child(2) {
+        width: 48px !important;
+        font-size: 0.95rem !important;
+      }
+      #lrep505923715 td:last-child, #lrep217907025 td:last-child,
+      #lrep463262751 td:last-child, #lrep445860493 td:last-child {
+        font-size: 0.72rem !important;
+      }
+      .embed-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="Glen Villa Juniors FC Logo" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">Glen Villa Juniors</span>
+          <span class="brand-sub">Football Club</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="teams.html" class="nav-link ">Teams</a>
+        <a href="fixtures.html" class="nav-link active">Fixtures</a>
+        <a href="join.html" class="nav-link nav-link--join ">Join Us</a>
+        <a href="sponsors.html" class="nav-link ">Sponsor Us</a>
+        <a href="kit.html" class="nav-link ">Club Kit</a>
+        <a href="documents.html" class="nav-link ">Documents</a>
+        <a href="contact.html" class="nav-link ">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="fixtures-hero">
+      <div class="fixtures-hero-content">
+        <div class="section-label light" style="justify-content:center;">Glen Villa Juniors FC</div>
+        <h1>Fixtures &amp; <span>Find Us</span></h1>
+        <p>Live fixtures and results for all squads, plus how to find Great Glen Recreational.</p>
+      </div>
+    </section>
+
+    <div class="fixtures-page">
+
+      <!-- ══════════════════════════════════════════
+           FA FULL TIME EMBEDS
+      ══════════════════════════════════════════ -->
+      <div class="section-heading">
+        <div class="section-heading-icon">📡</div>
+        <div>
+          <div class="section-heading-label">Live from FA Full Time</div>
+          <h2>Fixtures &amp; Results</h2>
+        </div>
+      </div>
+
+      <!-- LEAGUE TABS -->
+      <div class="league-tabs">
+        <button class="league-tab active" onclick="showLeague('u7u8', this)">
+          U7 &amp; U8
+          <span class="tab-teams">Leicester Junior League</span>
+        </button>
+        <button class="league-tab" onclick="showLeague('u11u12', this)">
+          U11 &amp; U12
+          <span class="tab-teams">Leicester Junior League</span>
+        </button>
+        <button class="league-tab tab-pending" title="Coming soon">
+          U9 &amp; U10
+          <span class="tab-teams">Coming soon</span>
+        </button>
+        <button class="league-tab tab-pending" title="Coming soon">
+          U13 — U17
+          <span class="tab-teams">Coming soon</span>
+        </button>
+      </div>
+
+      <!-- U7 & U8 -->
+      <div class="league-panel active" id="panel-u7u8">
+        <div class="embed-grid">
+          <div class="embed-slot">
+            <div class="embed-slot-header">
+              <span class="embed-slot-title">Upcoming Fixtures — U7 &amp; U8</span>
+              <span class="embed-slot-badge">FA Full Time</span>
+            </div>
+            <div style="padding:1.25rem;">
+              <div id="lrep505923715" style="width:100%;">Data loading....<a href="null">click here for null</a><br/><br/><a href="http://www.thefa.com/FULL-TIME">FULL-TIME Home</a></div>
+              <script language="javascript" type="text/javascript">var lrcode = '505923715'</script>
+              <script language="Javascript" type="text/javascript" src="https://fulltime.thefa.com/client/api/cs1.js"></script>
+            </div>
+          </div>
+          <div class="embed-slot">
+            <div class="embed-slot-header">
+              <span class="embed-slot-title">Recent Results — U7 &amp; U8</span>
+              <span class="embed-slot-badge">FA Full Time</span>
+            </div>
+            <div style="padding:1.25rem;">
+              <div id="lrep217907025" style="width:100%;">Data loading....<a href="null">click here for null</a><br/><br/><a href="http://www.thefa.com/FULL-TIME">FULL-TIME Home</a></div>
+              <script language="javascript" type="text/javascript">var lrcode = '217907025'</script>
+              <script language="Javascript" type="text/javascript" src="https://fulltime.thefa.com/client/api/cs1.js"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- U11 & U12 -->
+      <div class="league-panel" id="panel-u11u12">
+        <div class="embed-grid">
+          <div class="embed-slot">
+            <div class="embed-slot-header">
+              <span class="embed-slot-title">Upcoming Fixtures — U11 &amp; U12</span>
+              <span class="embed-slot-badge">FA Full Time</span>
+            </div>
+            <div style="padding:1.25rem;">
+              <div id="lrep463262751" style="width:100%;">Data loading....<a href="null">click here for null</a><br/><br/><a href="http://www.thefa.com/FULL-TIME">FULL-TIME Home</a></div>
+              <script language="javascript" type="text/javascript">var lrcode = '463262751'</script>
+              <script language="Javascript" type="text/javascript" src="https://fulltime.thefa.com/client/api/cs1.js"></script>
+            </div>
+          </div>
+          <div class="embed-slot">
+            <div class="embed-slot-header">
+              <span class="embed-slot-title">Recent Results — U11 &amp; U12</span>
+              <span class="embed-slot-badge">FA Full Time</span>
+            </div>
+            <div style="padding:1.25rem;">
+              <div id="lrep445860493" style="width:100%;">Data loading....<a href="null">click here for null</a><br/><br/><a href="http://www.thefa.com/FULL-TIME">FULL-TIME Home</a></div>
+              <script language="javascript" type="text/javascript">var lrcode = '445860493'</script>
+              <script language="Javascript" type="text/javascript" src="https://fulltime.thefa.com/client/api/cs1.js"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+    </div><!-- /fixtures-page -->
+
+    <!-- ══════════════════════════════════════════
+         MAP & LOCATION
+    ══════════════════════════════════════════ -->
+    <section class="map-section">
+      <div class="map-inner">
+
+        <div class="map-info">
+          <div class="section-heading-label" style="font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;">
+            <span style="display:block;width:18px;height:2px;background:var(--blue);"></span>
+            Find Us
+          </div>
+          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:0.04em;color:#fff;line-height:1;margin-bottom:1.5rem;">
+            Great Glen <span style="color:var(--blue);">Recreational</span>
+          </h2>
+
+          <div class="location-details">
+            <div class="loc-item">
+              <div class="loc-icon">📍</div>
+              <div>
+                <span class="loc-label">Address</span>
+                <span class="loc-value">Bindleys Lane, Great Glen<br>Leicester, LE8 9FG</span>
+              </div>
+            </div>
+            <div class="loc-item">
+              <div class="loc-icon">🚗</div>
+              <div>
+                <span class="loc-label">By Car</span>
+                <span class="loc-value">Free parking available on site.<br>Follow signs to Great Glen Recreation Ground.</span>
+              </div>
+            </div>
+            <div class="loc-item">
+              <div class="loc-icon">🚌</div>
+              <div>
+                <span class="loc-label">By Bus</span>
+                <span class="loc-value">Bus route X7 from Leicester city centre stops at Great Glen village.</span>
+              </div>
+            </div>
+            <div class="loc-item">
+              <div class="loc-icon">📞</div>
+              <div>
+                <span class="loc-label">Contact</span>
+                <span class="loc-value"><a id="contact-email-fx" href="mailto:info@glenvillajuniors.co.uk" style="color:inherit;">info@glenvillajuniors.co.uk</a></span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://www.google.com/maps/dir/?api=1&destination=52.5754666,-1.0344139"
+             target="_blank" rel="noopener" class="btn btn-blue">
+            Get Directions →
+          </a>
+        </div>
+
+        <div class="map-frame-wrap">
+          <iframe
+            title="Great Glen Recreational location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2426.8!2d-1.0344139!3d52.5754666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877643c808ac305%3A0x40fb59d2a92a0581!2sGlen%20Villa%20Juniors%20FC!5e0!3m2!1sen!2suk!4v1234567890"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Glen Villa Juniors FC" class="footer-logo" />
+        <div>
+          <div class="footer-club-name">Glen Villa Juniors FC</div>
+          <div class="footer-tagline">Passion. Teamwork. Community.</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="fixtures.html">Fixtures</a>
+        <a href="join.html">Join Us</a>
+        <a href="sponsors.html">Sponsor Us</a>
+        <a href="kit.html">Club Kit</a>
+        <a href="documents.html">Documents</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 Glen Villa Juniors FC. All rights reserved. <span class="footer-credit"><img src="images/eternal-logo.jpg" alt="Eternal" class="footer-credit-logo" /> Designed by Eternal</span></div>
+    </div>
+  </footer>
+
+  <script>
+    const u = 'info', d = 'glenvilajuniors.com';
+    const el = document.getElementById('contact-email-fx');
+    el.textContent = u + '@' + d;
+    el.href = 'mailto:' + u + '@' + d;
+  </script>
+  <script>
+    function showLeague(id, btn) {
+      if (btn.classList.contains('tab-pending')) return;
+      document.querySelectorAll('.league-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.league-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('panel-' + id).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
+  <script src="nav.js"></script>
+</body>
+</html>

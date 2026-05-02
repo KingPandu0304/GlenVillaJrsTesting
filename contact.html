@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="designer" content="Eternal" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch with Glen Villa Juniors FC. Find contact information for our community football club in Glenrothes." />
+  <title>Contact Us — Glen Villa Juniors FC</title>
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact Us — Glen Villa Juniors FC" />
+  <meta property="og:description" content="Get in touch with Glen Villa Juniors FC. Find contact information for our community football club in Glenrothes." />
+  <meta property="og:image" content="images/logo.png" />
+  <meta property="og:url" content="https://glenvila.com/contact.html" />
+
+
+  <link rel="canonical" href="https://glenvila.com/contact.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://glenvila.com"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Contact Us — Glen Villa Juniors FC",
+      "item": "https://glenvila.com/contact.html"
+    }]
+  }
+  </script>
+  <style>
+
+    .contact-hero {
+      padding-top: 72px;
+      background: var(--maroon-dark);
+      min-height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(-55deg, transparent, transparent 40px, rgba(110,198,230,0.03) 40px, rgba(110,198,230,0.03) 80px);
+    }
+    .contact-hero-content { position: relative; z-index: 1; padding: 2.5rem 2rem; max-width: 580px; }
+    .contact-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 5rem); letter-spacing: 0.05em; color: #fff; line-height: 1; margin-bottom: 0.5rem; }
+    .contact-hero h1 span { color: var(--blue); }
+    .contact-hero p { color: rgba(255,255,255,0.68); font-size: 1rem; max-width: 440px; margin: 0 auto; line-height: 1.7; }
+
+    .contact-page { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+    /* ── CONTACT CARDS ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .contact-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      border: 2px solid rgba(122,0,0,0.07);
+      transition: transform var(--ease), box-shadow var(--ease);
+    }
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .contact-card-top {
+      background: var(--maroon-dark);
+      padding: 1.25rem 1.4rem 1rem;
+    }
+    .contact-role {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.35rem;
+    }
+    .contact-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.7rem;
+      letter-spacing: 0.04em;
+      color: #fff;
+      line-height: 1.05;
+    }
+    .contact-card-body { padding: 1.4rem; }
+    .contact-desc {
+      font-size: 0.87rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 1.1rem;
+    }
+    .contact-email-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fdf0f0;
+      border: 1px solid rgba(122,0,0,0.15);
+      border-radius: 6px;
+      padding: 0.6rem 0.9rem;
+      text-decoration: none;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--maroon-dark);
+      transition: background var(--ease), border-color var(--ease);
+      word-break: break-all;
+    }
+    .contact-email-btn:hover {
+      background: #f5e0e0;
+      border-color: rgba(122,0,0,0.3);
+    }
+    .contact-email-btn span { opacity: 0.5; font-size: 1rem; }
+
+    /* ── GENERAL ENQUIRIES PANEL ── */
+    .general-panel {
+      background: var(--maroon-dark);
+      border-radius: var(--radius);
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+    .general-panel-text h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.05em;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 0.75rem;
+    }
+    .general-panel-text h2 span { color: var(--blue); }
+    .general-panel-text p {
+      color: rgba(255,255,255,0.68);
+      font-size: 0.92rem;
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+    .general-email-display {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 0.9rem 1.2rem;
+    }
+    .general-email-display span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      flex-shrink: 0;
+    }
+    .general-email-display a {
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .general-email-display a:hover { text-decoration: underline; }
+
+    .general-panel-topics { display: flex; flex-direction: column; gap: 0.75rem; }
+    .topic-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .topic-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+    .topic-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 0.15rem;
+    }
+    .topic-desc { font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .general-panel { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 600px) {
+      .contact-page { padding: 3rem 1.25rem 5rem; }
+      .contact-hero-content { padding: 2.25rem 1.25rem; }
+      .general-email-display {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .general-panel { padding: 2rem 1.5rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="Glen Villa Juniors FC Logo" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">Glen Villa Juniors</span>
+          <span class="brand-sub">Football Club</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="teams.html" class="nav-link">Teams</a>
+        <a href="fixtures.html" class="nav-link">Fixtures</a>
+        <a href="join.html" class="nav-link nav-link--join">Join Us</a>
+        <a href="sponsors.html" class="nav-link">Sponsor Us</a>
+        <a href="kit.html" class="nav-link">Club Kit</a>
+        <a href="documents.html" class="nav-link">Documents</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="contact-hero">
+      <div class="contact-hero-content">
+        <div class="section-label light" style="justify-content:center;">Glen Villa Juniors FC</div>
+        <h1>Contact <span>Us</span></h1>
+        <p>Get in touch with the right person at the club — whether you're a parent, player, or potential sponsor.</p>
+      </div>
+    </section>
+
+    <div class="contact-page">
+
+      <!-- ── KEY CONTACTS ── -->
+      <div class="section-heading" style="margin-bottom:2rem;">
+        <div class="section-heading-icon">👤</div>
+        <div>
+          <div class="section-heading-label">Who to Contact</div>
+          <h2 class="section-heading-h2">Club Contacts</h2>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- CHAIR -->
+        <div class="contact-card">
+          <div class="contact-card-top">
+            <div class="contact-role">Club Chair</div>
+            <div class="contact-name" id="chair-name">George</div>
+          </div>
+          <div class="contact-card-body">
+            <p class="contact-desc">Responsible for the overall running of the club. Contact the chair for governance matters, complaints, or anything requiring club leadership.</p>
+            <a class="contact-email-btn" id="chair-email" href="mailto:chair@glenvillajuniors.co.uk">
+              <span>✉</span> <span id="chair-email-text">chair@glenvillajuniors.co.uk</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- SECRETARY -->
+        <div class="contact-card">
+          <div class="contact-card-top">
+            <div class="contact-role">Club Secretary</div>
+            <div class="contact-name" id="secretary-name">TBC</div>
+          </div>
+          <div class="contact-card-body">
+            <p class="contact-desc">Handles registrations, league admin, and official club correspondence. First point of contact for administrative queries.</p>
+            <a class="contact-email-btn" id="secretary-email" href="mailto:secretary@glenvillajuniors.co.uk">
+              <span>✉</span> <span id="secretary-email-text">secretary@glenvillajuniors.co.uk</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- GENERAL -->
+        <div class="contact-card">
+          <div class="contact-card-top">
+            <div class="contact-role">General Enquiries</div>
+            <div class="contact-name">Club Email</div>
+          </div>
+          <div class="contact-card-body">
+            <p class="contact-desc">Not sure who to contact? Send a general enquiry to the club and we'll make sure it gets to the right person.</p>
+            <a class="contact-email-btn" id="general-email" href="mailto:info@glenvillajuniors.co.uk">
+              <span>✉</span> info@glenvillajuniors.co.uk
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── GENERAL ENQUIRIES PANEL ── -->
+      <div class="general-panel">
+        <div class="general-panel-text">
+          <h2>Got a <span>Question?</span></h2>
+          <p>Whether you want to know about joining, sponsoring a team, or anything else about the club — drop us an email and we'll get back to you as soon as we can.</p>
+          <div class="general-email-display">
+            <span>Email</span>
+            <a id="general-email-2" href="mailto:info@glenvillajuniors.co.uk">info@glenvillajuniors.co.uk</a>
+          </div>
+        </div>
+        <div class="general-panel-topics">
+          <div class="topic-item">
+            <div class="topic-icon">⚽</div>
+            <div>
+              <div class="topic-title">Joining the Club</div>
+              <div class="topic-desc">Ask about spaces, trials, and how to sign your child up — or visit our <a href="join.html" style="color:var(--blue);">Join Us</a> page.</div>
+            </div>
+          </div>
+          <div class="topic-item">
+            <div class="topic-icon">🤝</div>
+            <div>
+              <div class="topic-title">Sponsorship</div>
+              <div class="topic-desc">Interested in sponsoring a team? Visit our <a href="sponsors.html" style="color:var(--blue);">Sponsor Us</a> page or email us directly.</div>
+            </div>
+          </div>
+          <div class="topic-item">
+            <div class="topic-icon">👕</div>
+            <div>
+              <div class="topic-title">Kit Queries</div>
+              <div class="topic-desc">Questions about ordering kit or sizing? See the <a href="kit.html" style="color:var(--blue);">Club Kit</a> page or contact your team coach.</div>
+            </div>
+          </div>
+          <div class="topic-item">
+            <div class="topic-icon">📋</div>
+            <div>
+              <div class="topic-title">Admin &amp; Documents</div>
+              <div class="topic-desc">For registrations and official documents, contact the club secretary directly.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Glen Villa Juniors FC" class="footer-logo" />
+        <div>
+          <div class="footer-club-name">Glen Villa Juniors FC</div>
+          <div class="footer-tagline">Passion. Teamwork. Community.</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="fixtures.html">Fixtures</a>
+        <a href="join.html">Join Us</a>
+        <a href="sponsors.html">Sponsor Us</a>
+        <a href="kit.html">Club Kit</a>
+        <a href="documents.html">Documents</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 Glen Villa Juniors FC. All rights reserved. <span class="footer-credit"><img src="images/eternal-logo.jpg" alt="Eternal" class="footer-credit-logo" /> Designed by Eternal</span></div>
+    </div>
+  </footer>
+
+  <script>
+    // General email
+    (function() {
+      const email = 'info@glenvillajuniors.co.uk';
+      document.getElementById('general-email').href = 'mailto:' + email;
+      document.getElementById('general-email-2').href = 'mailto:' + email;
+    })();
+
+    // Chair + Secretary — update name and email here when confirmed
+    const contacts = {
+      secretary: {
+        name:  'TBC',          // e.g. 'John Smith'
+        email: 'secretary@glenvillajuniors.co.uk'
+      },
+      chair: {
+        name:  'George',          // e.g. 'Jane Doe'
+        email: 'chair@glenvillajuniors.co.uk'
+      }
+    };
+
+    document.getElementById('chair-name').textContent        = contacts.chair.name;
+    document.getElementById('chair-email').href              = 'mailto:' + contacts.chair.email;
+    document.getElementById('chair-email-text').textContent  = contacts.chair.email;
+
+    document.getElementById('secretary-name').textContent       = contacts.secretary.name;
+    document.getElementById('secretary-email').href             = 'mailto:' + contacts.secretary.email;
+    document.getElementById('secretary-email-text').textContent = contacts.secretary.email;
+
+    
+      // Page fade-in animations
+      const elements = document.querySelectorAll('main > section, .contact-cards > .contact-card');
+      let animationIndex = 0;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, animationIndex * 50);
+            animationIndex++;
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(element => {
+        element.classList.add('fade-in');
+        observer.observe(element);
+      });
+    ;
+  </script>
+
+  <script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+[
+  {
+    "type": "team",
+    "team": "U7",
+    "sponsor": "Great Glen Village Store",
+    "sponsor_logo": "",
+    "sponsor_website": "",
+    "sponsor_tagline": "Our local community shop"
+  },
+  {
+    "type": "team",
+    "team": "U8",
+    "sponsor": "Harborough Plumbing Co.",
+    "sponsor_logo": "",
+    "sponsor_website": "",
+    "sponsor_tagline": "Heating & plumbing specialists"
+  },
+  {
+    "type": "team",
+    "team": "U11",
+    "sponsor": "Glencar",
+    "sponsor_logo": "https://www.glencar.com/app/uploads/2026/03/Glencar-Blue-Logo.png",
+    "sponsor_website": "https://www.glencar.com/",
+    "sponsor_tagline": "Construction excellence"
+  },
+  {
+    "type": "team",
+    "team": "U12",
+    "sponsor": "Leicester Print Works",
+    "sponsor_logo": "",
+    "sponsor_website": "",
+    "sponsor_tagline": "Your local print & design studio"
+  },
+  {
+    "type": "team",
+    "team": "U13",
+    "sponsor": "Glen Auto Centre",
+    "sponsor_logo": "",
+    "sponsor_website": "",
+    "sponsor_tagline": "Servicing & MOT in Great Glen"
+  },
+  {
+    "type": "team",
+    "team": "U15",
+    "sponsor": "",
+    "sponsor_logo": "",
+    "sponsor_website": "",
+    "sponsor_tagline": ""
+  },
+  {
+    "type": "team",
+    "team": "U17",
+    "sponsor": "",
+    "sponsor_logo": "",
+    "sponsor_website": "",
+    "sponsor_tagline": ""
+  },
+  {
+    "type": "club_partner",
+    "team": "",
+    "sponsor": "Macron",
+    "sponsor_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsY7XflqiiRzspP55BD11vHAv3qFedbYCb2g&s",
+    "sponsor_website": "https://www.macron.com/",
+    "sponsor_tagline": "Official kit supplier",
+    "partner_role": "Kit Supplier"
+  }
+]
