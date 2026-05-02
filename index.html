@@ -368,7 +368,7 @@
         <a href="documents.html">Documents</a>
         <a href="contact.html">Contact</a>
       </div>
-      <div class="footer-copy">&copy; 2026 Glen Villa Juniors FC. All rights reserved. <span class="footer-credit"><img src="images/eternal-logo.png" alt="Eternal" class="footer-credit-logo" /> Designed by Eternal</span></div>
+      <div class="footer-copy">&copy; 2026 Glen Villa Juniors FC. All rights reserved. <span class="footer-credit" role="button" tabindex="0" aria-label="Contact the designer"><img src="images/eternal-logo.png" alt="Eternal" class="footer-credit-logo" /> Designed by Eternal</span></div>
     </div>
   </footer>
 
@@ -418,8 +418,8 @@
             : '';
 
           const cardOpen = p.link
-            ? '<a class="news-card' + (p.pinned ? ' news-card--pinned' : '') + '" href="' + p.link + '" target="_blank" rel="noopener" style="animation-delay:' + (i * 0.08) + 's;text-decoration:none;color:inherit;display:block;">'
-            : '<article class="news-card' + (p.pinned ? ' news-card--pinned' : '') + '" style="animation-delay:' + (i * 0.08) + 's;">';
+            ? '<a class="news-card' + (p.pinned ? ' news-card--pinned' : '') + '" href="' + p.link + '" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">'
+            : '<article class="news-card' + (p.pinned ? ' news-card--pinned' : '') + '">';
           const cardClose = p.link ? '</a>' : '</article>';
           const readMore = p.link ? '<span class="news-read-more">Read more →</span>' : '';
 
@@ -509,28 +509,6 @@
         if (section) section.style.display = 'none';
       }
     }
-
-    // Page fade-in animations
-    document.addEventListener('DOMContentLoaded', () => {
-      const elements = document.querySelectorAll('main > section, .about-section, .values-section, .photo-feature, .news-section, .map-section, .hero-content > *, .about-text > *, .values-grid > .value-item, .photo-feature-grid > *, .news-grid > .news-item, .map-info > *, .kit-info > *, .contact-cards > .contact-card, .documents-grid > .document-card, .team-card');
-      let animationIndex = 0;
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add('visible');
-            }, animationIndex * 20);
-            animationIndex++;
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      elements.forEach(element => {
-        element.classList.add('fade-in');
-        observer.observe(element);
-      });
-    });
 
     // Back-to-top button
     const backToTopBtn = document.createElement('button');

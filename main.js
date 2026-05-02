@@ -91,22 +91,7 @@ function renderCards(grid, teams) {
       }
     });
 
-    card.classList.add('fade-in');
-    card.classList.add('fade-in');
     grid.appendChild(card);
-
-    // Observe for animation
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 50);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    observer.observe(card);
   });
 }
 

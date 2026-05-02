@@ -39,15 +39,6 @@ body {
 }
 
 /* ─── ANIMATIONS ────────────────────────────────────── */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* Kit product hover */
 .kit-product {
@@ -1183,6 +1174,7 @@ a   { text-decoration: none; color: inherit; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  align-items: stretch;
 }
 /* 1 card only */
 .news-grid:has(.news-card:only-child) {
@@ -1203,18 +1195,11 @@ a   { text-decoration: none; color: inherit; }
   border: 1px solid rgba(122,0,0,0.07);
   display: flex;
   flex-direction: column;
-  opacity: 0;
-  transform: translateY(16px);
-  animation: newsCardIn 0.4s ease forwards;
   transition: transform var(--ease), box-shadow var(--ease);
 }
 .news-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-}
-
-@keyframes newsCardIn {
-  to { opacity: 1; transform: translateY(0); }
 }
 
 .news-card--pinned {
@@ -1335,6 +1320,12 @@ a.news-card:hover .news-read-more { gap: 0.5rem; }
   margin-bottom: 0.4rem;
 }
 .news-empty p { font-size: 0.9rem; color: var(--text-mid); }
+
+@media (max-width: 900px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (max-width: 700px) {
   .news-section {
@@ -2188,8 +2179,23 @@ a.news-card:hover .news-read-more { gap: 0.5rem; }
   transition: opacity 0.3s ease;
   text-decoration: none;
   color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 .footer-credit:hover { opacity: 0.85; }
+.footer-credit:focus-visible {
+  opacity: 0.85;
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
 .footer-credit-logo {
   width: 18px;
   height: 18px;
@@ -2199,3 +2205,106 @@ a.news-card:hover .news-read-more { gap: 0.5rem; }
   transition: filter 0.3s ease;
 }
 .footer-credit:hover .footer-credit-logo { filter: grayscale(0%); }
+
+.designer-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(17, 10, 10, 0.66);
+  z-index: 2000;
+}
+.designer-modal.open {
+  display: flex;
+}
+.designer-modal-card {
+  width: min(100%, 420px);
+  background: linear-gradient(180deg, #fff8f5 0%, #ffffff 100%);
+  border: 1px solid rgba(122, 0, 0, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(25, 12, 12, 0.24);
+  padding: 1.5rem;
+  position: relative;
+}
+.designer-modal-close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(122, 0, 0, 0.08);
+  color: var(--maroon-dark);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.designer-modal-close:hover {
+  background: rgba(122, 0, 0, 0.14);
+}
+.designer-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+  padding-right: 2.5rem;
+}
+.designer-modal-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.designer-modal-kicker {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue-dark);
+  margin-bottom: 0.15rem;
+}
+.designer-modal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  color: var(--maroon-dark);
+}
+.designer-modal-body {
+  color: var(--text-mid);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.designer-modal-link {
+  color: var(--maroon);
+  font-weight: 700;
+}
+.designer-modal-link:hover {
+  text-decoration: underline;
+}
+.designer-modal-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1.2rem;
+}
+.designer-modal-email {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.8rem 1.1rem;
+  background: var(--maroon);
+  color: #fff;
+  border-radius: 10px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.designer-modal-email:hover {
+  background: var(--maroon-dark);
+}
